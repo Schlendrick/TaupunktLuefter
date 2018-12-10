@@ -67,8 +67,6 @@ void loop(){
  
   lesenSensoren();  // Aufruf Unterroutine Sensoren lesen
 
-  lcdScreen(); // Anzeige Feuchtigkeit Temperatur auf LCD
-
   
   if ((fTempInnen >= fTempSchwMin) && (fTempInnen <= fTempSchwMax)){
     // Prüfen ob die Raumtemperatur innerhalb der eingestelten Schwelle liegt, ausserhalb wird nicht gelüftet
