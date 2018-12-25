@@ -9,6 +9,7 @@ void lesenSensoren() {
     fFeuchteAussen = dht1.readHumidity(); // lesen Luftfeuchte Aussensensor
     fTempAussen = dht1.readTemperature();
     displayNoValues(0);
+    luefterAUS();
     delay(2000);
     
   }
@@ -27,6 +28,7 @@ void lesenSensoren() {
     fFeuchteInnen = dht2.readHumidity();
     fTempInnen = dht2.readTemperature();
     displayNoValues(1);
+    luefterAUS();
     delay(2000);
   }
  // Anzeige Temperatur und Feuchte auf Display
