@@ -56,7 +56,12 @@ void displayValues(int n, float t, float h){
   // Anzeige der Temperatur und der Feuchte auf LCD
   // Cursor ändern falls Temperatur unter 0°C fällt
   lcd.setCursor(0,n); //Ab hier kann das I2C LCD Modul genau wie das einfache LCD Modul programmiert werden.
-  lcd.print("A T:");
+  if(n == 0){
+    lcd.print("A T:");
+  }else{
+    lcd.print("I T:");
+  }
+  
   if(t < 0){
     lcd.setCursor(4,n);  
   }else{
@@ -78,14 +83,18 @@ void displayValues(int n, float t, float h){
 
 void displayNoValues(int n){
   //Zeige _ _ an wen keine gueltigen Werte von Sensor vorhanden
-  lcd.setCursor(n,0); 
-  lcd.print("A ");
+  lcd.setCursor(0,n); 
+  if(n == 0){
+    lcd.print("A ");
+  }else{
+     lcd.print("I ");
+  }
   lcd.print("T:");
   lcd.print(" __"); 
   lcd.print("\337"); 
-  lcd.setCursor(8,0);
+  lcd.setCursor(8,n);
   lcd.print("C "); 
-  lcd.setCursor(11,0);
+  lcd.setCursor(11,n);
   lcd.print("F:");
   lcd.print("__");
   lcd.print("%");
